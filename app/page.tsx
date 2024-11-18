@@ -1,9 +1,11 @@
-import Logo from "@/components/Logo";
+import Header from "@/components/Header";
 
 export default function HomePage() {
   return (
-    <main>
-      <Logo />
-    </main>
+    <>
+      <Header className="mt-10" />
+
+      <main></main>
+    </>
   );
 }
