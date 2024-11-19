@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import classNames from 'classnames'
 import Logo from '@/components/Logo'
-import { Settings, Search } from 'lucide-react'
+import { Settings, Search, ChevronDown } from 'lucide-react'
 
 type HeaderProps = {
   className?: string
@@ -50,15 +50,16 @@ export default function Header({ className }: HeaderProps) {
           <input
             type="text"
             placeholder="نام کتاب، نویسنده، ناشر و..."
-            className="w-[849px] h-[72px] rounded-3xl outline-none placeholder-content-low pr-6 text-base font-medium"
+            className="w-[849px] h-[72px] rounded-3xl outline-none placeholder-content-high pr-6 text-base font-medium"
           />
 
           <div className="absolute left-6 flex gap-x-3 items-center">
-            <select className="flex justify-center items-center w-36 h-12 transition-all text-nowrap rounded-xl text-content-low text-sm font-bold bg-alabaster hover:bg-black-haze cursor-pointer">
+            <select className="select flex justify-center items-center w-36 h-12 pr-4 pt-1 transition-all text-nowrap rounded-xl text-content-low text-sm font-bold bg-alabaster hover:bg-black-haze cursor-pointer">
               <option value="0">انتخاب کتابخانه</option>
               <option value="1">کتابخانه مرکزی</option>
             </select>
 
+            <ChevronDown className="absolute right-28 pt-1 text-content-low" />
             <Search className="text-content-low" />
             <Settings className="text-content-low" />
           </div>
