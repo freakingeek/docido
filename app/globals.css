@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-alabaster text-content-high-emphasis;
+  @apply bg-alabaster text-content-high;
 }

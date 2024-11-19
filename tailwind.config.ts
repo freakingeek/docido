@@ -11,9 +11,11 @@ export default {
       colors: {
         alabaster: "#f0eee2",
         content: {
-          "high-emphasis": "#666150",
-          "low-emphasis": "#918d80",
+          high: "#666150",
+          low: "#918d80",
         },
+        orange: "#daa357",
+        "black-haze": "#e4e1d1",
       },
     },
   },
