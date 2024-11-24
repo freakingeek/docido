@@ -17,6 +17,7 @@ export default {
         orange: '#daa357',
         'black-haze': '#e4e1d1',
         red: '#df7777',
+        darkBlue: '#9ca9c0',
       },
     },
   },

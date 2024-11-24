@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import classNames from 'classnames'
 import Logo from '@/components/Logo'
-import { Settings, Search, ChevronDown } from 'react-feather'
+import { Settings, Search, ChevronDown, ShoppingBag } from 'react-feather'
 
 type HeaderProps = {
   className?: string
@@ -41,6 +41,11 @@ export default function Header({ className }: HeaderProps) {
     },
   ]
 
+  const options = [
+    { value: '1.', label: 'کتابخانه مرکزی' },
+    { value: '2.', label: 'کتابخانه صوتی' },
+  ]
+
   return (
     <header className={classNames('flex items-start justify-between', className)}>
       <Logo />
@@ -50,16 +55,23 @@ export default function Header({ className }: HeaderProps) {
           <input
             type="text"
             placeholder="نام کتاب، نویسنده، ناشر و..."
-            className="w-[849px] h-[72px] rounded-3xl outline-none placeholder-content-high pr-6 text-base font-medium"
+            className="w-[849px] h-[72px] rounded-3xl outline-none placeholder-content-high pr-6 text-base font-medium shadow-md"
           />
 
           <div className="absolute left-6 flex gap-x-3 items-center">
-            <select className="select flex justify-center items-center w-36 h-12 pr-4 pt-1 transition-all text-nowrap rounded-xl text-content-low text-sm font-bold bg-alabaster hover:bg-black-haze cursor-pointer">
-              <option value="0">انتخاب کتابخانه</option>
-              <option value="1">کتابخانه مرکزی</option>
+            <select className="flex justify-center items-center w-36 h-12 pr-4 pt-1 outline-none transition-all appearance-none text-nowrap rounded-xl text-content-low text-sm font-bold bg-alabaster hover:bg-black-haze cursor-pointer">
+              {options.map((option) => (
+                <option key={option.value} className="w-full">
+                  {option.label}
+                </option>
+              ))}
             </select>
-
-            <ChevronDown className="absolute right-28 pt-1 text-content-low" />
+            <Link
+              href="#select"
+              className="absolute left-20 top-[14px] text-content-low cursor-pointer"
+            >
+              <ChevronDown />
+            </Link>
             <Search className="text-content-low" />
             <Settings className="text-content-low" />
           </div>
@@ -79,6 +91,12 @@ export default function Header({ className }: HeaderProps) {
       </div>
 
       <div className="flex gap-x-3 mt-3">
+        <Link
+          href="/"
+          className="w-12 h-12 flex justify-center items-center text-white bg-darkBlue rounded-2xl"
+        >
+          <ShoppingBag />
+        </Link>
         <Link
           href="/dashboard"
           className="w-12 h-12 flex justify-center items-center pb-1 bg-orange text-white text-2xl font-bold rounded-2xl"
