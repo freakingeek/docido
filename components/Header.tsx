@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import classNames from 'classnames'
 import Logo from '@/components/Logo'
-import { Settings, Search, ChevronDown } from 'lucide-react'
+import { Settings, Search, ChevronDown } from 'react-feather'
 
 type HeaderProps = {
   className?: string
