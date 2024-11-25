@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import classNames from 'classnames'
 import Logo from '@/components/Logo'
-import { Settings, Search, ChevronDown, ShoppingBag } from 'react-feather'
+import { Settings, Search, ChevronDown, ShoppingBag, User } from 'react-feather'
 
 type HeaderProps = {
   className?: string
@@ -47,7 +47,7 @@ export default function Header({ className }: HeaderProps) {
   ]
 
   return (
-    <header className={classNames('flex items-start justify-between', className)}>
+    <header className={classNames('flex items-start justify-between isolate', className)}>
       <Logo />
 
       <div>
@@ -85,6 +85,7 @@ export default function Header({ className }: HeaderProps) {
         </nav>
       </div>
 
+      {/* Product ID - First Design: Empty Shopping Cart */}
       <div className="flex gap-x-3 mt-3">
         <Link
           href="/"
@@ -106,6 +107,65 @@ export default function Header({ className }: HeaderProps) {
           <span className="text-content-low font-medium text-sm">امتیـــاز ۴۵۰</span>
         </div>
       </div>
+
+      {/* Product ID - First design: Full shopping cart */}
+      {/* <div className="flex gap-x-3 mt-3">
+        <Link
+          href="/"
+          className=" relative w-12 h-12 flex justify-center items-center text-white bg-lightRed rounded-2xl"
+        >
+          <ShoppingBag />
+          <span className="absolute flex justify-center items-center top-5 left-8 border-2 border-lightRed bg-alabaster text-lightRed rounded-full w-8 h-8">
+            5
+          </span>
+        </Link>
+        <Link
+          href="/dashboard"
+          className="w-12 h-12 flex justify-center items-center pb-1 bg-orange text-white text-2xl font-bold rounded-2xl"
+        >
+          ج
+        </Link>
+
+        <div className="flex gap-y-1 flex-col">
+          <Link href="/" className="text-content-high font-bold">
+            علی جواهرزاده
+          </Link>
+          <span className="text-content-low font-medium text-sm">امتیـــاز ۴۵۰</span>
+        </div>
+      </div> */}
+
+      {/* Product ID - Second Design */}
+      {/* <div className="flex shrink-0 justify-between gap-x-12 mt-3">
+        <div className="flex gap-x-3">
+          <Link
+            href="/dashboard"
+            className="w-12 h-12 flex justify-center items-center pb-1 bg-orange text-white text-2xl font-bold rounded-2xl"
+          >
+            ج
+          </Link>
+
+          <div className="flex gap-y-1 flex-col">
+            <Link href="/" className="text-content-high font-bold">
+              علی جواهرزاده
+            </Link>
+            <span className="text-content-low font-medium text-sm">امتیـــاز ۴۵۰</span>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center gap-x-3">
+          <Link
+            href="/"
+            className="flex justify-center items-center w-12 h-12 rounded-2xl bg-ashwood"
+          >
+            <User className="text-content-low" />
+          </Link>
+          <Link href="/">
+            <span className="text-base font-medium text-content-high">ورود/ثبت نام</span>
+          </Link>
+        </div>
+      </div> */}
+
+      {/* Product ID - Third Design */}
     </header>
   )
 }

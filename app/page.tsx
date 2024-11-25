@@ -1,11 +1,12 @@
 'use client'
 // import Link from 'next/link'
-import Image from 'next/image'
-import Header from '@/components/Header'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-import 'swiper/css/pagination'
 import '../app/globals.css'
+import Link from 'next/link'
+import Image from 'next/image'
+import 'swiper/css/pagination'
+import Header from '@/components/Header'
+import { Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Star, Headphones, BookOpen, Paperclip } from 'lucide-react'
 
 export default function HomePage() {
@@ -120,6 +121,19 @@ export default function HomePage() {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Book categories */}
+        <div>
+          <ul>
+            <li>
+              <Link href="/"></Link>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
 
         <div>
           <div className="flex justify-between mt-36">
