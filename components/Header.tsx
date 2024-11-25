@@ -59,14 +59,14 @@ export default function Header({ className }: HeaderProps) {
           />
 
           <div className="absolute left-6 flex gap-x-3 items-center">
-            <select className="flex justify-center items-center w-36 h-12 pr-4 pt-1 outline-none transition-all appearance-none text-nowrap rounded-xl text-content-low text-sm font-bold bg-alabaster hover:bg-black-haze cursor-pointer">
+            <select className="flex justify-center items-center w-36 h-11 pr-3 outline-none transition-all appearance-none text-nowrap rounded-xl text-content-low text-sm font-bold bg-lightAlb hover:bg-black-haze cursor-pointer">
               {options.map((option) => (
                 <option key={option.value} className="w-full">
                   {option.label}
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute left-20 top-[14px] text-content-low pointer-events-none" />
+            <ChevronDown className="absolute left-20 top-3 text-content-low pointer-events-none" />
             <Search className="text-content-low" />
             <Settings className="text-content-low" />
           </div>

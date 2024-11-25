@@ -1,5 +1,4 @@
 'use client'
-// import Link from 'next/link'
 import '../app/globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,7 +8,11 @@ import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import {
   BookOpen,
+  Book,
   Paperclip,
+  Headphones,
+  FileText,
+  File,
   Settings,
   Search,
   ChevronDown,
@@ -131,15 +134,53 @@ export default function HomePage() {
         </Swiper>
 
         {/* Book categories */}
-        <div>
-          <ul>
+        <div className="flex justify-center">
+          <ul className="flex gap-x-4 mt-12">
             <li>
-              <Link href="/"></Link>
+              <Link
+                href="/"
+                className="flex items-center gap-x-2 p-4 bg-black-haze text-content-low rounded-3xl hover:bg-ashwood transition-all duration-300"
+              >
+                <BookOpen size={33} />
+                <span>کتاب متنی</span>
+              </Link>
             </li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <Link
+                href="/"
+                className="flex items-center gap-x-2 p-4 bg-black-haze text-content-low rounded-3xl hover:bg-ashwood transition-all duration-300"
+              >
+                <Headphones size={33} />
+                <span>کتاب صوتی</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="flex items-center gap-x-2 p-4 bg-black-haze text-content-low rounded-3xl hover:bg-ashwood transition-all duration-300"
+              >
+                <FileText size={33} />
+                <span>نشریه</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="flex items-center gap-x-2 p-4 bg-black-haze text-content-low rounded-3xl hover:bg-ashwood transition-all duration-300"
+              >
+                <Book size={33} />
+                <span>نسخه خطی</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="flex items-center gap-x-2 p-4 bg-black-haze text-content-low rounded-3xl hover:bg-ashwood transition-all duration-300"
+              >
+                <File size={33} />
+                <span>سند</span>
+              </Link>
+            </li>
           </ul>
         </div>
 
