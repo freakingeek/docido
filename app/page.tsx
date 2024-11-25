@@ -3,7 +3,10 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Star, Headphones, BookOpenText, Paperclip } from 'lucide-react'
+import { Pagination } from 'swiper/modules'
+import 'swiper/css/pagination'
+import '../app/globals.css'
+import { Star, Headphones, BookOpen, Paperclip } from 'lucide-react'
 
 export default function HomePage() {
   const sliders = [
@@ -38,12 +41,47 @@ export default function HomePage() {
     },
     {
       id: 1,
-      img: 'https://fastly.picsum.photos/id/545/220/330.jpg?hmac=egrVNjBuoylYBf7A5wfd-7D7J5xUtvZgb0FEtvsU7sQ',
+      img: 'https://fastly.picsum.photos/id/645/220/330.jpg?hmac=2fTsi1c4Dlkqc2VCe28et4p2rd1pK8_AvUItJ-_NhCc',
       link: '/',
     },
     {
       id: 2,
-      img: 'https://fastly.picsum.photos/id/545/220/330.jpg?hmac=egrVNjBuoylYBf7A5wfd-7D7J5xUtvZgb0FEtvsU7sQ',
+      img: 'https://fastly.picsum.photos/id/979/220/330.jpg?hmac=QOt7-jRS3t9J-tWHPaOpw3JhgFsYfBnm_CS5DO1QnG0',
+      link: '/',
+    },
+    {
+      id: 3,
+      img: 'https://fastly.picsum.photos/id/1041/220/330.jpg?hmac=Upa4V38W63lLkbRrCS69zFq8HU-vOJwMpEmj_nD7fZk',
+      link: '/',
+    },
+    {
+      id: 4,
+      img: 'https://fastly.picsum.photos/id/788/220/330.jpg?hmac=uCojuT1AtjC0Kv1p-s3t1gGGscZ1wKc5bpzbuyAXFSg',
+      link: '/',
+    },
+    {
+      id: 5,
+      img: 'https://fastly.picsum.photos/id/515/220/330.jpg?hmac=YTNlaG87z7br18UKBllt29zuRrcwojq0AuAmoCLd1aI',
+      link: '/',
+    },
+    {
+      id: 6,
+      img: 'https://fastly.picsum.photos/id/981/220/330.jpg?hmac=kwuAR_Qheow1vv0tj3FM_e3LWaN5qcPfQH6lsjntqnk',
+      link: '/',
+    },
+    {
+      id: 7,
+      img: 'https://fastly.picsum.photos/id/291/220/330.jpg?hmac=tIcryQmGrL3aYuqrQVBG353mfnKA77LSedMANZq8e38',
+      link: '/',
+    },
+    {
+      id: 8,
+      img: 'https://fastly.picsum.photos/id/777/220/330.jpg?hmac=b4Ysrzz3oGSQ1RM0OleJ4Pvp4lo9WwTrnwRaYuG3AV0',
+      link: '/',
+    },
+    {
+      id: 9,
+      img: 'https://fastly.picsum.photos/id/788/220/330.jpg?hmac=uCojuT1AtjC0Kv1p-s3t1gGGscZ1wKc5bpzbuyAXFSg',
       link: '/',
     },
   ]
@@ -53,7 +91,13 @@ export default function HomePage() {
       <Header className="mt-10" />
 
       <main>
-        <Swiper spaceBetween={16} className="h-96 mt-20">
+        {/* Banner slider */}
+        <Swiper
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+          spaceBetween={16}
+          className="h-96 mt-20"
+        >
           {sliders.map((slider) => (
             <SwiperSlide key={slider.id} className="w-full h-full relative">
               <div>
@@ -78,26 +122,28 @@ export default function HomePage() {
         </Swiper>
 
         <div>
-          <div className="mt-36">
+          <div className="flex justify-between mt-36">
             <span className="text-content-high font-bold text-2xl">دیگر آثار این ناشر</span>
+            <button>بیشتر...</button>
           </div>
 
-          <Swiper spaceBetween={16} className="h-96 mt-20">
+          <Swiper slidesPerView={6} spaceBetween={24} className="flex w-full mt-14">
             {books.map((book) => (
-              <SwiperSlide key={book.id} className="w-full h-full relative">
-                <div id="slide">
-                  <div className="relative w-56 h-80  rounded-3xl overflow-hidden">
-                    <img src={book.img} alt={book.link} className="w-full h-full rounded-3xl" />
-                    <span className="absolute flex justify-center items-center w-14 h-14 top-[-8px] right-[179px] bg-red rounded-2xl">
-                      <Paperclip size={20} className=" text-white ml-3 mt-3" />
+              <SwiperSlide key={book.id} className="flex w-56">
+                <div className="relative w-56 h-80 rounded-3xl overflow-hidden">
+                  <img src={book.img} alt={book.link} className="w-full h-full rounded-3xl" />
+                  <span className="absolute flex justify-center items-center w-14 h-14 top-[-8px] right-[179px] bg-red rounded-2xl">
+                    <Paperclip size={20} className=" text-white ml-3 mt-3" />
+                  </span>
+                  <span className="absolute flex justify-center items-center top-[270px] right-2 w-auto opacity-85 rounded-2xl bg-alabaster cursor-pointer group">
+                    <BookOpen size={20} className="text-content-high m-2.5" />
+                    <span className="hidden group-hover:inline ml-2 pl-6 text-sm">
+                      کتابخانه تخصصی تاریخ...
                     </span>
-                    <span className="absolute top-[270px] right-2 flex justify-center items-center opacity-85 rounded-2xl bg-alabaster hover:flex ">
-                      <BookOpenText size={20} className="text-content-high m-2.5" />
-                    </span>
-                  </div>
-
-                  <div></div>
+                  </span>
                 </div>
+
+                <div></div>
               </SwiperSlide>
             ))}
           </Swiper>

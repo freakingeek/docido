@@ -66,12 +66,7 @@ export default function Header({ className }: HeaderProps) {
                 </option>
               ))}
             </select>
-            <Link
-              href="#select"
-              className="absolute left-20 top-[14px] text-content-low cursor-pointer"
-            >
-              <ChevronDown />
-            </Link>
+            <ChevronDown className="absolute left-20 top-[14px] text-content-low pointer-events-none" />
             <Search className="text-content-low" />
             <Settings className="text-content-low" />
           </div>
