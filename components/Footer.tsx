@@ -74,13 +74,13 @@ export default function Footer({ className }: FooterProps) {
               <div className="flex justify-between rounded-2xl gap-x-5">
                 <Link
                   href="/"
-                  className="flex items-center p-4 bg-LightAlb border border-black-haze rounded-2xl"
+                  className="flex items-center p-4 bg-lightAlb border border-black-haze rounded-2xl"
                 >
                   <Image src="/assets/images/Apple.png" alt="Apple" width={27} height={34} />
                 </Link>
                 <Link
                   href="/"
-                  className="flex items-center p-4 bg-LightAlb border border-black-haze rounded-2xl"
+                  className="flex items-center p-4 bg-lightAlb border border-black-haze rounded-2xl"
                 >
                   <Image
                     src="/assets/images/GooglePlay.png"
@@ -91,7 +91,7 @@ export default function Footer({ className }: FooterProps) {
                 </Link>
                 <Link
                   href="/"
-                  className="flex items-center p-4 bg-LightAlb border border-black-haze rounded-2xl"
+                  className="flex items-center p-4 bg-lightAlb border border-black-haze rounded-2xl"
                 >
                   <Image src="/assets/images/Bazar.png" alt="Bazar" width={85} height={34} />
                 </Link>
