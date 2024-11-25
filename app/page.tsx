@@ -7,7 +7,15 @@ import 'swiper/css/pagination'
 import Header from '@/components/Header'
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Star, Headphones, BookOpen, Paperclip } from 'lucide-react'
+import {
+  BookOpen,
+  Paperclip,
+  Settings,
+  Search,
+  ChevronDown,
+  ShoppingBag,
+  User,
+} from 'react-feather'
 
 export default function HomePage() {
   const sliders = [
@@ -97,7 +105,7 @@ export default function HomePage() {
           pagination={{ clickable: true }}
           modules={[Pagination]}
           spaceBetween={16}
-          className="h-96 mt-20"
+          className="h-96 mt-14"
         >
           {sliders.map((slider) => (
             <SwiperSlide key={slider.id} className="w-full h-full relative">
