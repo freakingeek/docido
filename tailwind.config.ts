@@ -20,8 +20,6 @@ export default {
         lightRed: '#dc5d5d',
         darkBlue: '#9ca9c0',
         ashwood: '#dbd8c9 ',
-        WhiteCoffee: '#e6e4d7',
-        lightAlb: '#f8f6ee',
       },
     },
   },
