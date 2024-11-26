@@ -1,23 +1,31 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        alabaster: "#f0eee2",
+        alabaster: '#f0eee2',
         content: {
-          high: "#666150",
-          low: "#918d80",
+          high: '#666150',
+          low: '#918d80',
         },
-        orange: "#daa357",
-        "black-haze": "#e4e1d1",
+        orange: '#daa357',
+        'black-haze': '#e4e1d1',
+        red: '#df7777',
+        lightRed: '#dc5d5d',
+        lightblue: '#638dd8',
+        darkBlue: '#9ca9c0',
+        ashwood: '#dbd8c9 ',
+        WhiteCoffee: '#e6e4d7',
+        lightAlb: '#f8f6ee',
+        yellow: '#e7ba61',
       },
     },
   },
   plugins: [],
-} satisfies Config;
+} satisfies Config
