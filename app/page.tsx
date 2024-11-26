@@ -341,7 +341,7 @@ export default function HomePage() {
           </Swiper>
         </div>
 
-        {/* publishers' works */}
+        {/* publishers' works : first design */}
         <div>
           <div className="flex justify-between mt-20">
             <span className="text-content-high font-bold text-2xl">دیگر آثار این ناشر</span>
@@ -364,6 +364,94 @@ export default function HomePage() {
               <SwiperSlide
                 key={book.id}
                 className="flex flex-col items-center w-[270px] hover:bg-lightAlb rounded-3xl cursor-pointer p-4"
+              >
+                <div className="relative h-80 rounded-3xl overflow-hidden">
+                  <img src={book.img} alt={book.link} className="w-[220px] h-full rounded-3xl" />
+                  <span className="absolute flex justify-center items-center w-14 h-14 top-[-8px] right-[155px] bg-red rounded-2xl">
+                    <Paperclip size={20} className=" text-white ml-3 mt-3" />
+                  </span>
+                  <span className="absolute flex justify-center items-center top-[270px] right-2 w-auto opacity-85 rounded-2xl bg-alabaster cursor-pointer group">
+                    <BookOpen size={20} className="text-content-high m-2.5" />
+                    <span className="hidden group-hover:inline w-auto pl-2 text-sm">
+                      کتابخانه تخصصی تاریخ...
+                    </span>
+                  </span>
+                </div>
+
+                <div className="mt-3 text-content-low">
+                  <div className={`flex ${!book.showHeadphones ? 'justify-between' : 'gap-x-1.5'}`}>
+                    {book.showHeadphones && (
+                      <span
+                        className="flex justify-center items-center w-10 h-10
+                     rounded-2xl bg-black-haze"
+                      >
+                        <Headphones size={20} />
+                      </span>
+                    )}
+
+                    <span className="flex justify-center items-center text-base w-24 h-10 bg-black-haze rounded-2xl gap-x-1">
+                      <span>{book.total}</span>/<span className="font-bold">{book.point}</span>
+                      <Star size={16} />
+                    </span>
+
+                    <span
+                      className={`flex justify-center items-center text-white w-16 h-10 rounded-2xl ${
+                        Number(book.discount.replace('%', '')) > 50 ? 'bg-lightblue' : 'bg-yellow'
+                      }`}
+                    >
+                      <span>{book.discount}</span>
+                    </span>
+                  </div>
+                  <div className="flex flex-col justify-center items-center mt-5">
+                    <span className="text-black text-xl font-semibold">{book.title}</span>
+                    <span className="text-black text-base font-normal mt-2">
+                      {book.discription}
+                    </span>
+                    {!book.price && (
+                      <button className="w-[220px] h-10 border-dashed border border-lightblue text-lightblue rounded-2xl mt-5">
+                        رایگان
+                      </button>
+                    )}
+
+                    {book.price && (
+                      <span className="flex justify-center items-center mt-7">
+                        <span className="text-content-high text-xl font-semibold mx-4">
+                          {book.price}
+                        </span>
+                        <span className="line-through text-base font-normal">{book.dropped}</span>
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* publishers' works : secend design */}
+        <div className="relative">
+          <div className="absolute -my-[60px] -mx-[110px] inset-0 bg-white opacity-45 -z-10 rounded-3xl"></div>
+          <div className="flex justify-between mt-20 z-10">
+            <span className="text-content-high font-bold text-2xl">دیگر آثار این ناشر</span>
+            <Link
+              href="/"
+              className="font-medium text-base p-5 rounded-2xl bg-black-haze hover:bg-WhiteCoffee"
+            >
+              بیشتر...
+            </Link>
+          </div>
+
+          <Swiper
+            slidesPerView={6}
+            modules={[Navigation]}
+            navigation={true}
+            spaceBetween={25}
+            className="flex w-full mt-14"
+          >
+            {books.map((book) => (
+              <SwiperSlide
+                key={book.id}
+                className="flex flex-col items-center w-[270px] rounded-3xl cursor-pointer p-4"
               >
                 <div className="relative h-80 rounded-3xl overflow-hidden">
                   <img src={book.img} alt={book.link} className="w-[220px] h-full rounded-3xl" />
