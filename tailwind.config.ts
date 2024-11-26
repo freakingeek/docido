@@ -22,6 +22,7 @@ export default {
         ashwood: '#dbd8c9 ',
         WhiteCoffee: '#e6e4d7',
         lightAlb: '#f8f6ee',
+        yello: '#e7ba61',
       },
     },
   },

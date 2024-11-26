@@ -13,6 +13,7 @@ import {
   Headphones,
   FileText,
   File,
+  Star,
   Settings,
   Search,
   PlayCircle,
@@ -51,51 +52,121 @@ export default function HomePage() {
       id: 0,
       img: 'https://fastly.picsum.photos/id/545/220/330.jpg?hmac=egrVNjBuoylYBf7A5wfd-7D7J5xUtvZgb0FEtvsU7sQ',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 1,
       img: 'https://fastly.picsum.photos/id/645/220/330.jpg?hmac=2fTsi1c4Dlkqc2VCe28et4p2rd1pK8_AvUItJ-_NhCc',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 2,
       img: 'https://fastly.picsum.photos/id/979/220/330.jpg?hmac=QOt7-jRS3t9J-tWHPaOpw3JhgFsYfBnm_CS5DO1QnG0',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 3,
       img: 'https://fastly.picsum.photos/id/1041/220/330.jpg?hmac=Upa4V38W63lLkbRrCS69zFq8HU-vOJwMpEmj_nD7fZk',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 4,
       img: 'https://fastly.picsum.photos/id/788/220/330.jpg?hmac=uCojuT1AtjC0Kv1p-s3t1gGGscZ1wKc5bpzbuyAXFSg',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 5,
       img: 'https://fastly.picsum.photos/id/515/220/330.jpg?hmac=YTNlaG87z7br18UKBllt29zuRrcwojq0AuAmoCLd1aI',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 6,
       img: 'https://fastly.picsum.photos/id/981/220/330.jpg?hmac=kwuAR_Qheow1vv0tj3FM_e3LWaN5qcPfQH6lsjntqnk',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 7,
       img: 'https://fastly.picsum.photos/id/291/220/330.jpg?hmac=tIcryQmGrL3aYuqrQVBG353mfnKA77LSedMANZq8e38',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 8,
       img: 'https://fastly.picsum.photos/id/777/220/330.jpg?hmac=b4Ysrzz3oGSQ1RM0OleJ4Pvp4lo9WwTrnwRaYuG3AV0',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
     {
       id: 9,
       img: 'https://fastly.picsum.photos/id/788/220/330.jpg?hmac=uCojuT1AtjC0Kv1p-s3t1gGGscZ1wKc5bpzbuyAXFSg',
       link: '/',
+      point: '4',
+      price: '29,000تومان',
+      total: '103',
+      title: 'داستان های دورگه',
+      dropped: '59,000',
+      discount: '%50',
+      discription: 'احمد احمدی',
     },
   ]
   const posts = [
@@ -267,29 +338,73 @@ export default function HomePage() {
           </Swiper>
         </div>
 
+        {/* publishers' works */}
         <div>
-          <div className="flex justify-between mt-36">
+          <div className="flex justify-between mt-20">
             <span className="text-content-high font-bold text-2xl">دیگر آثار این ناشر</span>
-            <button>بیشتر...</button>
+            <Link
+              href="/"
+              className="font-medium text-base p-5 rounded-2xl bg-black-haze hover:bg-WhiteCoffee"
+            >
+              بیشتر...
+            </Link>
           </div>
 
-          <Swiper slidesPerView={6} spaceBetween={24} className="flex w-full mt-14">
+          <Swiper slidesPerView={6} spaceBetween={25} className="flex w-full mt-14">
             {books.map((book) => (
-              <SwiperSlide key={book.id} className="flex w-56">
-                <div className="relative w-56 h-80 rounded-3xl overflow-hidden">
-                  <img src={book.img} alt={book.link} className="w-full h-full rounded-3xl" />
-                  <span className="absolute flex justify-center items-center w-14 h-14 top-[-8px] right-[179px] bg-red rounded-2xl">
+              <SwiperSlide
+                key={book.id}
+                className="flex flex-col items-center w-[270px] hover:bg-lightAlb rounded-3xl cursor-pointer p-4"
+              >
+                <div className="relative h-80 rounded-3xl overflow-hidden">
+                  <img src={book.img} alt={book.link} className="w-[220px] h-full rounded-3xl" />
+                  <span className="absolute flex justify-center items-center w-14 h-14 top-[-8px] right-[155px] bg-red rounded-2xl">
                     <Paperclip size={20} className=" text-white ml-3 mt-3" />
                   </span>
                   <span className="absolute flex justify-center items-center top-[270px] right-2 w-auto opacity-85 rounded-2xl bg-alabaster cursor-pointer group">
                     <BookOpen size={20} className="text-content-high m-2.5" />
-                    <span className="hidden group-hover:inline ml-2 pl-6 text-sm">
+                    <span className="hidden group-hover:inline w-auto pl-2 text-sm">
                       کتابخانه تخصصی تاریخ...
                     </span>
                   </span>
                 </div>
 
-                <div></div>
+                <div className="mt-3 text-content-low">
+                  <div className="flex gap-x-1.5">
+                    <Link
+                      href={book.link}
+                      className="flex justify-center items-center w-10 h-10
+                     rounded-2xl bg-black-haze"
+                    >
+                      <Headphones size={20} />
+                    </Link>
+                    <Link
+                      href={book.link}
+                      className="flex justify-center items-center text-base w-24 h-10 bg-black-haze rounded-2xl"
+                    >
+                      <span>{book.total}</span>/<span className="font-bold">{book.point}</span>
+                      <Star size={16} />
+                    </Link>
+                    <Link
+                      href={book.link}
+                      className="flex justify-center items-center text-white w-16 h-10 bg-yello rounded-2xl"
+                    >
+                      <span>{book.discount}</span>
+                    </Link>
+                  </div>
+                  <div className="flex flex-col justify-center items-center mt-5">
+                    <span className="text-black text-xl font-semibold">{book.title}</span>
+                    <span className="text-black text-base font-normal mt-2">
+                      {book.discription}
+                    </span>
+                    <span className="flex justify-center items-center mt-7">
+                      <span className="text-content-high text-xl font-semibold mx-4">
+                        {book.price}
+                      </span>
+                      <span className="line-through text-base font-normal">{book.dropped}</span>
+                    </span>
+                  </div>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
