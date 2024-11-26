@@ -57,32 +57,35 @@ export default function HomePage() {
       total: '103',
       title: 'داستان های دورگه',
       dropped: '59,000',
-      discount: '%50',
+      discount: '%35',
       discription: 'احمد احمدی',
+      showHeadphones: true,
     },
     {
       id: 1,
       img: 'https://fastly.picsum.photos/id/645/220/330.jpg?hmac=2fTsi1c4Dlkqc2VCe28et4p2rd1pK8_AvUItJ-_NhCc',
       link: '/',
       point: '4',
-      price: '29,000تومان',
+      price: '',
       total: '103',
       title: 'داستان های دورگه',
       dropped: '59,000',
       discount: '%50',
       discription: 'احمد احمدی',
+      showHeadphones: true,
     },
     {
       id: 2,
       img: 'https://fastly.picsum.photos/id/979/220/330.jpg?hmac=QOt7-jRS3t9J-tWHPaOpw3JhgFsYfBnm_CS5DO1QnG0',
       link: '/',
       point: '4',
-      price: '29,000تومان',
+      price: '',
       total: '103',
       title: 'داستان های دورگه',
       dropped: '59,000',
-      discount: '%50',
+      discount: '%80',
       discription: 'احمد احمدی',
+      showHeadphones: true,
     },
     {
       id: 3,
@@ -93,7 +96,7 @@ export default function HomePage() {
       total: '103',
       title: 'داستان های دورگه',
       dropped: '59,000',
-      discount: '%50',
+      discount: '%100',
       discription: 'احمد احمدی',
     },
     {
@@ -137,7 +140,7 @@ export default function HomePage() {
       img: 'https://fastly.picsum.photos/id/291/220/330.jpg?hmac=tIcryQmGrL3aYuqrQVBG353mfnKA77LSedMANZq8e38',
       link: '/',
       point: '4',
-      price: '29,000تومان',
+      price: '',
       total: '103',
       title: 'داستان های دورگه',
       dropped: '59,000',
@@ -165,7 +168,7 @@ export default function HomePage() {
       total: '103',
       title: 'داستان های دورگه',
       dropped: '59,000',
-      discount: '%50',
+      discount: '%70',
       discription: 'احمد احمدی',
     },
   ]
@@ -350,7 +353,13 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <Swiper slidesPerView={6} spaceBetween={25} className="flex w-full mt-14">
+          <Swiper
+            slidesPerView={6}
+            modules={[Navigation]}
+            navigation={true}
+            spaceBetween={25}
+            className="flex w-full mt-14"
+          >
             {books.map((book) => (
               <SwiperSlide
                 key={book.id}
@@ -370,39 +379,48 @@ export default function HomePage() {
                 </div>
 
                 <div className="mt-3 text-content-low">
-                  <div className="flex gap-x-1.5">
-                    <Link
-                      href={book.link}
-                      className="flex justify-center items-center w-10 h-10
+                  <div className={`flex ${!book.showHeadphones ? 'justify-between' : 'gap-x-1.5'}`}>
+                    {book.showHeadphones && (
+                      <span
+                        className="flex justify-center items-center w-10 h-10
                      rounded-2xl bg-black-haze"
-                    >
-                      <Headphones size={20} />
-                    </Link>
-                    <Link
-                      href={book.link}
-                      className="flex justify-center items-center text-base w-24 h-10 bg-black-haze rounded-2xl"
-                    >
+                      >
+                        <Headphones size={20} />
+                      </span>
+                    )}
+
+                    <span className="flex justify-center items-center text-base w-24 h-10 bg-black-haze rounded-2xl gap-x-1">
                       <span>{book.total}</span>/<span className="font-bold">{book.point}</span>
                       <Star size={16} />
-                    </Link>
-                    <Link
-                      href={book.link}
-                      className="flex justify-center items-center text-white w-16 h-10 bg-yello rounded-2xl"
+                    </span>
+
+                    <span
+                      className={`flex justify-center items-center text-white w-16 h-10 rounded-2xl ${
+                        Number(book.discount.replace('%', '')) > 50 ? 'bg-lightblue' : 'bg-yellow'
+                      }`}
                     >
                       <span>{book.discount}</span>
-                    </Link>
+                    </span>
                   </div>
                   <div className="flex flex-col justify-center items-center mt-5">
                     <span className="text-black text-xl font-semibold">{book.title}</span>
                     <span className="text-black text-base font-normal mt-2">
                       {book.discription}
                     </span>
-                    <span className="flex justify-center items-center mt-7">
-                      <span className="text-content-high text-xl font-semibold mx-4">
-                        {book.price}
+                    {!book.price && (
+                      <button className="w-[220px] h-10 border-dashed border border-lightblue text-lightblue rounded-2xl mt-5">
+                        رایگان
+                      </button>
+                    )}
+
+                    {book.price && (
+                      <span className="flex justify-center items-center mt-7">
+                        <span className="text-content-high text-xl font-semibold mx-4">
+                          {book.price}
+                        </span>
+                        <span className="line-through text-base font-normal">{book.dropped}</span>
                       </span>
-                      <span className="line-through text-base font-normal">{book.dropped}</span>
-                    </span>
+                    )}
                   </div>
                 </div>
               </SwiperSlide>

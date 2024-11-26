@@ -11,7 +11,6 @@ body {
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 1rem;
+  border-radius: 50%;
   color: #697283;
-  text-shadow: none;
 }
