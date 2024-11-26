@@ -219,7 +219,7 @@ export default function HomePage() {
           </ul>
         </div>
 
-        {/* Section under study */}
+        {/* section under study */}
         <div className="flex flex-col justify-center cursor-pointer w-[1656px] -mx-[60px] p-11 h-80 bg-ashwood items-start rounded-[50px] mt-9">
           <span className="flex px-4 text-content-high text-xl font-extrabold pb-3">
             درحال مطالعه
@@ -254,7 +254,7 @@ export default function HomePage() {
                     <div className="flex justify-between mt-4">
                       <span className="text-content-high">
                         <span className="text-lg font-extrabold">3%</span>
-                        <span className="text-sm font-normal">شنیده اید</span>
+                        <span className="text-sm font-normal mx-2">شنیده اید</span>
                       </span>
                       <button className="text-content-low">
                         <PlayCircle size={32} />
