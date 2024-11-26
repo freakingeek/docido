@@ -5,3 +5,13 @@
 body {
   @apply bg-alabaster text-content-high;
 }
+
+.select {
+  appearance: none;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1rem;
+  color: #697283;
+  text-shadow: none;
+}
