@@ -518,7 +518,9 @@ export default function HomePage() {
 
         {/* {banner} */}
         <div className="mt-28">
-          <Image src="/assets/images/banner.png" alt="banner" width={1744} height={293} />
+          <Link href="/">
+            <Image src="/assets/images/banner.png" alt="banner" width={1744} height={293} />
+          </Link>
         </div>
       </main>
     </>
