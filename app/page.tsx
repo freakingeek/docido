@@ -294,7 +294,7 @@ export default function HomePage() {
         </div>
 
         {/* section under study */}
-        <div className="flex flex-col justify-center cursor-pointer w-[1656px] -mx-[60px] p-11 h-80 bg-ashwood items-start rounded-[50px] mt-9">
+        <div className="flex flex-col justify-center cursor-pointer -mx-[60px] p-11 h-80 bg-ashwood items-start rounded-[50px] mt-9">
           <span className="flex px-4 text-content-high text-xl font-extrabold pb-3">
             درحال مطالعه
           </span>
@@ -515,6 +515,11 @@ export default function HomePage() {
             ))}
           </Swiper>
         </div>
+
+        {/* {banner} */}
+        <Link href="/" className="mt-28">
+          <Image src="/assets/images/banner.png" alt="banner" width={1744} height={293} />
+        </Link>
       </main>
     </>
   )
