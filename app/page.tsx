@@ -429,7 +429,7 @@ export default function HomePage() {
         </div>
 
         {/* publishers' works : secend design */}
-        <div className="relative">
+        <div className="relative mt-44">
           <div className="absolute -my-[60px] -mx-[110px] inset-0 bg-white opacity-45 -z-10 rounded-3xl"></div>
           <div className="flex justify-between mt-20 z-10">
             <span className="text-content-high font-bold text-2xl">دیگر آثار این ناشر</span>
