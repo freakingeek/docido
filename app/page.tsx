@@ -515,6 +515,11 @@ export default function HomePage() {
             ))}
           </Swiper>
         </div>
+
+        {/* {banner} */}
+        <div className="mt-28">
+          <Image src="/assets/images/banner.png" alt="banner" width={1744} height={293} />
+        </div>
       </main>
     </>
   )
