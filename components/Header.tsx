@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import classNames from 'classnames'
 import Logo from '@/components/Logo'
-import { Settings, Search } from 'lucide-react'
+import { Settings, Search, ChevronDown, ShoppingBag, User } from 'react-feather'
 
 type HeaderProps = {
   className?: string
@@ -41,8 +41,13 @@ export default function Header({ className }: HeaderProps) {
     },
   ]
 
+  const options = [
+    { value: '1.', label: 'کتابخانه مرکزی' },
+    { value: '2.', label: 'کتابخانه صوتی' },
+  ]
+
   return (
-    <header className={classNames('flex items-start justify-between', className)}>
+    <header className={classNames('flex items-start justify-between isolate', className)}>
       <Logo />
 
       <div>
@@ -50,15 +55,18 @@ export default function Header({ className }: HeaderProps) {
           <input
             type="text"
             placeholder="نام کتاب، نویسنده، ناشر و..."
-            className="w-[849px] h-[72px] rounded-3xl outline-none placeholder-content-low pr-6 text-base font-medium"
+            className="w-[849px] h-[72px] rounded-3xl outline-none placeholder-content-high pr-6 text-base font-medium shadow-md"
           />
 
           <div className="absolute left-6 flex gap-x-3 items-center">
-            <select className="flex justify-center items-center w-36 h-12 transition-all text-nowrap rounded-xl text-content-low text-sm font-bold bg-alabaster hover:bg-black-haze cursor-pointer">
-              <option value="0">انتخاب کتابخانه</option>
-              <option value="1">کتابخانه مرکزی</option>
+            <select className="flex justify-center items-center w-36 h-11 pr-3 outline-none transition-all appearance-none text-nowrap rounded-xl text-content-low text-sm font-bold bg-lightAlb hover:bg-black-haze cursor-pointer">
+              {options.map((option) => (
+                <option key={option.value} className="w-full">
+                  {option.label}
+                </option>
+              ))}
             </select>
-
+            <ChevronDown className="absolute left-20 top-3 text-content-low pointer-events-none" />
             <Search className="text-content-low" />
             <Settings className="text-content-low" />
           </div>
@@ -77,7 +85,14 @@ export default function Header({ className }: HeaderProps) {
         </nav>
       </div>
 
+      {/* Product ID - First Design: Empty Shopping Cart */}
       <div className="flex gap-x-3 mt-3">
+        <Link
+          href="/"
+          className="w-12 h-12 flex justify-center items-center text-white bg-darkBlue rounded-2xl"
+        >
+          <ShoppingBag />
+        </Link>
         <Link
           href="/dashboard"
           className="w-12 h-12 flex justify-center items-center pb-1 bg-orange text-white text-2xl font-bold rounded-2xl"
@@ -92,6 +107,65 @@ export default function Header({ className }: HeaderProps) {
           <span className="text-content-low font-medium text-sm">امتیـــاز ۴۵۰</span>
         </div>
       </div>
+
+      {/* Product ID - First design: Full shopping cart */}
+      {/* <div className="flex gap-x-3 mt-3">
+        <Link
+          href="/"
+          className=" relative w-12 h-12 flex justify-center items-center text-white bg-lightRed rounded-2xl"
+        >
+          <ShoppingBag />
+          <span className="absolute flex justify-center items-center top-5 left-8 border-2 border-lightRed bg-alabaster text-lightRed rounded-full w-8 h-8">
+            5
+          </span>
+        </Link>
+        <Link
+          href="/dashboard"
+          className="w-12 h-12 flex justify-center items-center pb-1 bg-orange text-white text-2xl font-bold rounded-2xl"
+        >
+          ج
+        </Link>
+
+        <div className="flex gap-y-1 flex-col">
+          <Link href="/" className="text-content-high font-bold">
+            علی جواهرزاده
+          </Link>
+          <span className="text-content-low font-medium text-sm">امتیـــاز ۴۵۰</span>
+        </div>
+      </div> */}
+
+      {/* Product ID - Second Design */}
+      {/* <div className="flex shrink-0 justify-between gap-x-12 mt-3">
+        <div className="flex gap-x-3">
+          <Link
+            href="/dashboard"
+            className="w-12 h-12 flex justify-center items-center pb-1 bg-orange text-white text-2xl font-bold rounded-2xl"
+          >
+            ج
+          </Link>
+
+          <div className="flex gap-y-1 flex-col">
+            <Link href="/" className="text-content-high font-bold">
+              علی جواهرزاده
+            </Link>
+            <span className="text-content-low font-medium text-sm">امتیـــاز ۴۵۰</span>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center gap-x-3">
+          <Link
+            href="/"
+            className="flex justify-center items-center w-12 h-12 rounded-2xl bg-ashwood"
+          >
+            <User className="text-content-low" />
+          </Link>
+          <Link href="/">
+            <span className="text-base font-medium text-content-high">ورود/ثبت نام</span>
+          </Link>
+        </div>
+      </div> */}
+
+      {/* Product ID - Third Design */}
     </header>
   )
 }
