@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Footer from '@/components/Footer'
+import Phone from '@/components/Phone'
 
 const estedad = localFont({
   src: '../public/assets/fonts/Estedad-FD.woff2',
@@ -25,8 +26,8 @@ export default function RootLayout({
   return (
     <html lang="fa-IR" dir="rtl">
       <body className={estedad.className}>
-        <section className="max-w-screen-2xl mx-auto">{children}</section>
-        <Footer className="mt-44" />
+        <section className="max-w-screen-sm mx-auto">{children}</section>
+        {/* <Footer className="mt-44" /> */}
       </body>
     </html>
   )

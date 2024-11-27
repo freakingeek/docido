@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-alabaster text-content-high;
+  @apply text-content-high;
 }
 
 .select {
